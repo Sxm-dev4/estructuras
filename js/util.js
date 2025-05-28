@@ -1,4 +1,4 @@
-// Función principal requerida por el proyecto EDyA1
+// Función principal 
 function calcularLongestNaps(caso) {
   // (1) O(1) - División inicial
   const [profesoresStr, appointmentsStr] = caso.split('--');
