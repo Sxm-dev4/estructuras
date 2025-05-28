@@ -2,6 +2,7 @@
 function calcularLongestNaps(caso) {
   // (1) O(1) - División inicial
   const [profesoresStr, appointmentsStr] = caso.split('--');
+ // (2) O(1) 
   if (!profesoresStr || !appointmentsStr) return 'Formato inválido.';
 
   // (3) O(n) donde n = longitud de profesoresStr
@@ -47,10 +48,9 @@ function calcularLongestNaps(caso) {
     for (let i = 0; i < intervalos.length - 1; i++) {
       const finActual = intervalos[i][1];
       const inicioSiguiente = intervalos[i + 1][0];
-      const gap = inicioSiguiente - finActual;
-      
-      if (gap > mejorDuracion) {
-        mejorDuracion = gap;
+      const diff = inicioSiguiente - finActual;
+      if (diff > mejorDuracion) {
+        mejorDuracion = diff;
         inicioSiesta = finActual;
       }
     }
